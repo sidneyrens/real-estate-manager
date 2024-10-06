@@ -1,18 +1,6 @@
-# Real Estate Manager React UI
+# Getting Started with Create React App
 
-## Requirements
-In order to run the React UI, you need to have Node.js installed. You can download it from [here](https://nodejs.org/en/download/), or for MacOS, Homebrew users can install it by running `brew install node`.
-
-Validate the installation by running `node --version`.
-
-## Installation
-1. Clone the repository
-2. Run `npm install`
-
-## Running the app
-3. Run `npm start`
-
-*The React UI will run on port 3000.*
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
