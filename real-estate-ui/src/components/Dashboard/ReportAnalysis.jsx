@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, List, ListItem, ListItemText, Paper, Slider, Button } from '@mui/material';
-import { fetchIssues, submitPriorities } from '../../services/api'; // Correct path to api.js
+import { fetchIssues, submitPriorities } from '../../services/uploadService';
 
-const ReportAnalysis = ({ reportId }) => { // Accept reportId as a prop
+const ReportAnalysis = ({ reportId }) => {
   const [issues, setIssues] = useState([]);
 
-  useEffect(() => {
-    const getIssues = async () => {
-      try {
-        const response = await fetchIssues(reportId);
-        setIssues(response.data); // Assuming response.data contains the issues
-      } catch (error) {
-        console.error('Error fetching issues:', error);
-      }
-    };
+  // useEffect(() => {
+  //   const getIssues = async () => {
+  //     try {
+  //       const response = fetchIssues(reportId);
+  //       setIssues(response.data);
+  //     } catch (error) {
+  //       console.error('Error fetching issues:', error);
+  //     }
+  //   };
 
-    if (reportId) {
-      getIssues();
-    } else {
-      console.error('Report ID is undefined');
-    }
-  }, [reportId]);
+  //   if (reportId) {
+  //     getIssues();
+  //   } else {
+  //     console.error('Report ID is undefined');
+  //   }
+  // }, [reportId]);
 
   const handlePriorityChange = (id, newValue) => {
     setIssues(prevIssues =>
@@ -31,12 +31,12 @@ const ReportAnalysis = ({ reportId }) => { // Accept reportId as a prop
   };
 
   const handleSubmit = async () => {
-    try {
-      await submitPriorities(issues);
-      alert('Priorities submitted successfully!');
-    } catch (error) {
-      alert('Error submitting priorities: ' + error.message);
-    }
+    // try {
+    //    submitPriorities(issues);
+    //   alert('Priorities submitted successfully!');
+    // } catch (error) {
+    //   alert('Error submitting priorities: ' + error.message);
+    // }
   };
 
   return (

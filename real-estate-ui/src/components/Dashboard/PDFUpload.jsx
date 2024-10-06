@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Button, Typography, Box } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
-import { uploadPDF } from '../../services/api'; // Corrected import path
+import { uploadPDF } from '../../services/uploadService';
 
 const PDFUpload = () => {
   const [file, setFile] = useState(null);
@@ -13,7 +13,7 @@ const PDFUpload = () => {
       setFile(selectedFile);
       setFileUrl(URL.createObjectURL(selectedFile));
       try {
-        await uploadPDF(selectedFile); // Call the API to upload the PDF
+        uploadPDF(selectedFile);
         alert('File uploaded successfully!');
       } catch (error) {
         alert('Error uploading file: ' + error.message);
