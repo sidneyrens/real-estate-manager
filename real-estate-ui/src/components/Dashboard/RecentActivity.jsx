@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Typography, List, ListItem, ListItemText, Paper, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const RecentActivity = () => {
   // Sample data, replace with actual data fetching logic
@@ -14,13 +15,20 @@ const RecentActivity = () => {
       <Typography variant="h6" gutterBottom>
         Recent Activity
       </Typography>
-      <List>
-        {activities.map(activity => (
-          <ListItem key={activity.id}>
-            <ListItemText primary={activity.description} secondary={activity.date} />
-          </ListItem>
-        ))}
-      </List>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>View Activities</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            {activities.map(activity => (
+              <ListItem key={activity.id}>
+                <ListItemText primary={activity.description} secondary={activity.date} />
+              </ListItem>
+            ))}
+          </List>
+        </AccordionDetails>
+      </Accordion>
     </Paper>
   );
 };

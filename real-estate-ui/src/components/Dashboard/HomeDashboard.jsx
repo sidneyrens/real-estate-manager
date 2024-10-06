@@ -1,16 +1,9 @@
 import React from 'react';
-import { Box, Typography, Grid, Paper } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import PDFUpload from './PDFUpload';
+import { Box, Typography, Grid } from '@mui/material';
+import PDFUpload from './PDFUpload'; // Import the PDFUpload component
 import PropertyList from './PropertyList'; // Existing import
 import RecentActivity from './RecentActivity'; // Existing import
 import ReportAnalysis from './ReportAnalysis'; // Import the ReportAnalysis component
-
-const DashboardItem = styled(Paper)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 const HomeDash = () => {
   const reportId = 1; // Ensure this ID corresponds to an existing report
@@ -22,33 +15,16 @@ const HomeDash = () => {
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} md={6}>
-          <DashboardItem>
-            <Typography variant="h6" gutterBottom>
-              Upload Property Document
-            </Typography>
-            <PDFUpload />
-          </DashboardItem>
+          <PDFUpload />
         </Grid>
         <Grid item xs={12} md={6}>
-          <DashboardItem>
-            <Typography variant="h6" gutterBottom>
-              Recent Activity
-            </Typography>
-            <RecentActivity /> {/* Existing component */}
-          </DashboardItem>
+          <RecentActivity /> {/* Ensure this is only here once */}
         </Grid>
         <Grid item xs={12}>
-          <DashboardItem>
-            <Typography variant="h6" gutterBottom>
-              Your Properties
-            </Typography>
-            <PropertyList /> {/* Existing component */}
-          </DashboardItem>
+          <PropertyList /> {/* Ensure this is only here once */}
         </Grid>
         <Grid item xs={12}>
-          <DashboardItem>
-            <ReportAnalysis reportId={reportId} /> {/* Pass the reportId prop */}
-          </DashboardItem>
+          <ReportAnalysis reportId={reportId} />
         </Grid>
       </Grid>
     </Box>

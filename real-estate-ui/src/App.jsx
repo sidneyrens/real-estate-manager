@@ -1,13 +1,14 @@
 import React from 'react';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import midCenturyModernTheme from './theme'; // Import the theme
 import HomeDashboard from './components/Dashboard/HomeDashboard.jsx';
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider theme={midCenturyModernTheme}>
       <CssBaseline />
       <HomeDashboard />
-    </div>
+    </ThemeProvider>
   );
 };
 

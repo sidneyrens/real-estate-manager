@@ -4,9 +4,8 @@ const API_URL = 'http://localhost:5000/api'; // Update with your actual API URL
 
 // Function to upload PDF
 export const uploadPDF = async (file) => {
-  const formData = new FormData();
-  formData.append('file', file);
-  return await axios.post(`${API_URL}/upload`, formData);
+  // Commenting out the API call for now
+  // return await axios.post(`${API_URL}/upload`, file);
 };
 
 // Function to fetch issues from the report

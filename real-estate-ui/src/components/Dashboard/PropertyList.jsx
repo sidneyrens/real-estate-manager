@@ -1,5 +1,6 @@
 import React from 'react';
-import { Typography, List, ListItem, ListItemText, Paper } from '@mui/material';
+import { Typography, List, ListItem, ListItemText, Paper, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const PropertyList = () => {
   // Sample data, replace with actual data fetching logic
@@ -14,13 +15,20 @@ const PropertyList = () => {
       <Typography variant="h6" gutterBottom>
         Your Properties
       </Typography>
-      <List>
-        {properties.map(property => (
-          <ListItem key={property.id}>
-            <ListItemText primary={property.name} secondary={property.location} />
-          </ListItem>
-        ))}
-      </List>
+      <Accordion>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <Typography>View Properties</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <List>
+            {properties.map(property => (
+              <ListItem key={property.id}>
+                <ListItemText primary={property.name} secondary={property.location} />
+              </ListItem>
+            ))}
+          </List>
+        </AccordionDetails>
+      </Accordion>
     </Paper>
   );
 };
